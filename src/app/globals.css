@@ -1,17 +1,14 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* 🌗 Light Theme */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* 🌑 Dark Theme */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,8 +16,89 @@
   }
 }
 
+/* 🧍 Global Body Style */
 body {
-  background: var(--background);
+  background: #0b0b0b;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* 🌀 Custom Utility Classes */
+@layer utilities {
+  .container {
+    @apply px-4 sm: px-6 md:px-8;
+  }
+
+  /* 🎵 Vinyl Spin Animation */
+  .animate-spin-slow {
+    animation: spin 6s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* ✨ Vinyl Glow Effect - Circular */
+  .vinyl-glow {
+    @apply rounded-full overflow-hidden flex items-center justify-center;
+    box-shadow: 0 0 30px rgba(255, 0, 100, 0.4), 0 0 60px rgba(255, 0, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .vinyl-glow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 60px rgba(255, 0, 150, 0.7), 0 0 90px rgba(255, 0, 255, 0.5);
+  }
+
+  /* 💫 Shine Light Sweep Effect */
+  .shine-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shine-effect::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%);
+    animation: shine 3s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes shine {
+    0% {
+      transform: translate(-100%, -100%) rotate(25deg);
+    }
+
+    100% {
+      transform: translate(100%, 100%) rotate(25deg);
+    }
+  }
+}
+
+/* 🎯 ScrollSmoother Wrappers */
+#smooth-wrapper {
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  inset: 0;
+  z-index: 0;
+}
+
+#smooth-content {
+  will-change: transform;
 }
