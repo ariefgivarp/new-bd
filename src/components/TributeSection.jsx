@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import BirthdayCake from './BirthdayCake';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,11 +63,7 @@ const TributeSection = () => {
                 Website ini aku buat sebagai hadiah kecil dari penggemar yang menyayangimu.
                 Terima kasih sudah menjadi inspirasi.
             </p>
-            <img
-                src="/assets/images/album.png"
-                alt="Tribute"
-                className="tribute-img mx-auto shadow-lg w-60 h-60 object-cover"
-            />
+            <BirthdayCake />
         </section>
     );
 };

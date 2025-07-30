@@ -15,12 +15,15 @@ export const AudioProvider = ({ children }) => {
             {/* Audio player global, tidak terlihat di UI */}
             <audio
                 ref={audioRef}
-                src="/assets/audio/birthday-song.mp3"
-                preload="auto"
-                autoPlay
+                src={`/assets/audio/fixed-birthday-song.mp3?ts=${Date.now()}`}
+                preload="metadata"
                 loop
                 style={{ display: 'none' }}
+                type="audio/mpeg"
             />
+
+
+
         </AudioContext.Provider>
     );
 };
