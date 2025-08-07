@@ -169,7 +169,7 @@ const VinylPlayer = () => {
                         />
                     </div>
 
-                    <div className="relative z-0 w-[180px] h-[180px] -ml-[120px] flex items-center justify-center">
+                    <div className="relative z-0 w-[180px] h-[180px] -ml-[100px] flex items-center justify-center">
                         <div
                             ref={vinylRef}
                             className="w-[180px] h-[180px] animate-spin-slow vinyl-glow rounded-full flex items-center justify-center"

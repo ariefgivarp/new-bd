@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import BirthdayCake from './BirthdayCake';
+import Gallery from './Gallery';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,6 +65,7 @@ const TributeSection = () => {
                 Terima kasih sudah menjadi inspirasi.
             </p>
             <BirthdayCake />
+            <Gallery />
         </section>
     );
 };
