@@ -2,7 +2,7 @@ import VinylPlayer from "./VinylPlayer";
 
 const Hero = () => {
     return (
-        <section className="min-h-screen bg-[#f6eee3] text-white flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-12 text-center">
+        <section className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-12 text-center">
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
                 Happy Birthday, Jesslyn
             </h1>
